@@ -1,0 +1,280 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html{
+    font-size: 62.5%;
+  }
+  
+  body {
+    background: rgb(3, 0, 31);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .AppChat{
+    min-height: 100vh;
+    display: flex;
+    border-bottom:  1.2px solid rgb(238, 241, 242);
+    border-top:  1.2px solid rgb(238, 241, 242);
+  }
+  
+  .sideBar{
+    flex:3;
+    border-right:  1.2px solid rgb(238, 241, 242);
+  }
+  
+  .main{
+    flex:9;
+  }
+  
+  .logo{
+    margin-right: 1rem;
+  }
+  .brand{
+    font-size: 2rem;
+  }
+  .upperSide {
+    padding: 2.5rem;
+    border-bottom:  1.2px solid rgb(238, 241, 242);
+    height: 70%;
+  }
+  
+  .upperSideTop {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.5rem
+  }
+  
+  .addBtn{
+    height: 2rem;
+    padding-right: 1rem;
+  
+  
+  }
+  
+  .midBtn{
+    background: #5A4BFF;
+    border:none;
+    color: white;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    width: 25rem;
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+    margin: 0 auto; 
+    margin-bottom: 3rem;
+    border-radius: 0.5rem;
+  }
+  
+  .query{
+    display: flex;
+    align-items: center;
+    background: transparent;
+    color:rgba(222,222,222,1);
+    padding: 1.5rem;
+    width: 25rem;
+    margin: 1rem;
+    border-radius: 0.5rem;
+    border:1px solid rgba(98,98,98,1);
+  }
+  
+  .query>img {
+    margin-right: 2rem;
+    object-fit: cover;
+    height: 1.75rem;
+  }
+  
+  .lowerSide {
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .listItems {
+    margin: 0.75rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+  }
+  .listItemsImg {
+    margin:1rem;
+    padding-right: 1rem;
+  
+  }
+  
+  
+  .listItems:nth-child(1)>.listItemsImg {
+    margin-right: 0.5rem;
+  }
+  
+  .listItems:nth-child(3)>.listItemsImg {
+    margin-right: 0.75rem;
+  }
+  
+  .main {
+    min-height: calc(100vh - 14rem);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 6rem 10rem;
+    margin-bottom: 0;
+  }
+  .chatFooter {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3rem;
+  
+  }
+  
+  .chats {
+    overflow: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    width: 100%;
+    max-width: 70rem;
+    height: calc( 100vh - 17rem);
+  
+  }
+  
+  .chat { 
+    margin: 1rem;
+    padding: 2rem 3rem;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: flex-start;
+    text-align: justify;
+  }
+  
+  .chatImg {
+    object-fit: cover;
+    width: 3.5rem;
+    margin-right: 2rem;
+    border-radius: 0.5rem;
+  }
+  
+  .bot {
+    background: rgba(20,30,58,1);
+    width: fit-content;
+    border-radius: 0.5rem;
+  }
+  
+  .inp {
+    padding: 0.5;
+    background: rgba(28, 30, 58, 1);
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+    width: 68rem;
+    
+  }
+  
+  .inp>input{
+    width: calc(100% - 3rem);
+    outline: none;
+    padding: 1.25rem;
+    color: white;
+    
+  }
+  
+  .inp>input, .send{
+    background: transparent;
+    border: none;
+  }
+  
+  .chatFooter>p{
+    margin: 2rem 0;
+  }
+  
+  .contextInfo {
+    color: rgb(88, 210, 240); 
+    font-style: italic;
+    font-size: 1.3rem;
+    text-align: left;
+  }
+
+  #switchBtn {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  #switchBtn:hover {
+    background-color: #2980b9;
+  }
+
+@media screen and (max-width: 1200px) {
+  .AppChat{
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+  }
+  .upperSide{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+  }
+
+  .lowerSide{
+    align-items: center;
+    display: none;
+    flex-direction: column;
+    flex-wrap:wrap;
+    border-right:  1.2px solid rgb(238, 241, 242);
+  }
+  .upperSideBottom {
+    display: none;
+  }
+
+  .main {
+    height:100%;
+  }
+  .midBtn{
+    background: #5A4BFF;
+    border:none;
+    color: white;
+    padding: 1rem;
+    font-size: 1.5rem;
+    width: 15rem;
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+    margin: 0 auto; 
+    margin-bottom: 0.6rem;
+    border-radius: 0.5rem;
+  }
+
+  .main {
+    min-height: calc(100vh - 14rem);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 2rem 2rem;
+    margin-bottom: 0;
+  }
+  .chats {
+    overflow: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    width: 100%;
+    max-width: 70rem;
+    height: calc( 100vh - 17rem);
+  
+  }
+
+}
+

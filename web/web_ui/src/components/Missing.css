@@ -1,0 +1,21 @@
+article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: aliceblue;
+}
+.Missingp{
+    font-size: x-large;
+}
+h1{
+    font-size: x-large;
+}
+.flexGrow{
+    padding:2%;
+
+}
+.flexGrow a{
+    font-size: x-large;
+
+}
+

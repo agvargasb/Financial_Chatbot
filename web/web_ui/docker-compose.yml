@@ -1,0 +1,23 @@
+version: "3.7"
+services:
+  react_fainancial_web_ui:
+    container_name: react_fainancial_ui
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - LLM_API_URL=localhost:8181
+    volumes:
+      - './:/app'
+      - '/app/node_modules'
+    expose:
+      - 80
+    ports:
+      - '3001:80'
+    networks:
+      - web-fainancial
+networks:
+  web-fainancial:
+    name: web-fainancial
+    driver: bridge
+

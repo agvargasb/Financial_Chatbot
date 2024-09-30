@@ -1,0 +1,20 @@
+# wheel
+sec-downloader
+langchain
+langchain-google-genai
+langchainhub
+langchain-community
+langchain-core
+lark
+unstructured[html]
+google-generativeai
+redis
+qdrant-client
+# python-dotenv
+
+# sentence_transformers
+# transformers
+# pypdf
+
+# bardapi
+# protobuf==3.20.0

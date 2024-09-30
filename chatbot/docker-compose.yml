@@ -1,0 +1,77 @@
+version: "3.2"
+name: final_project_app
+
+services:
+  api:
+    # user: ${UID}:${GID}
+    image: final_project_api
+    container_name: flask_api
+    build:
+      # args:
+      #   - UID=${UID}
+      #   - GID=${GID}
+      context: ./api
+      target: build
+    ports:
+      - "8181:5000"
+    environment:
+      - FLASK_APP=app
+      - FLASK_DEBUG=1
+      - FLASK_ENV=development
+    depends_on:
+      - redis
+      - logic
+      # - qdrant
+    volumes:
+      - ./api:/src
+
+  redis:
+    image: redis:6.2.6
+    container_name: redis_cache
+
+  logic:
+    # user: ${UID}:${GID}
+    image: final_project_logic
+    container_name: langchain_logic
+    build:
+      # args:
+      #   - UID=${UID}
+      #   - GID=${GID}
+      context: ./logic
+      target: build
+    depends_on:
+      - redis
+      # - qdrant
+    environment:
+      - QDRANT_URL=${QDRANT_URL}
+      - QDRANT_API_KEY=${QDRANT_API_KEY}
+      - QDRANT_COLLECTION=${QDRANT_COLLECTION}
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+    volumes:
+      - ./logic:/src
+
+  # qdrant:
+  #   image: qdrant/qdrant
+  #   container_name: qdrant_vector_database
+  #   ports:
+  #     - "6333:6333"
+  #   expose:
+  #     - "6333"
+  #   volumes:
+  #     # - ./qdrant/config.yml:/qdrant/config.yml
+  #     - ./qdrant/storage:/qdrant/storage
+  
+  # ngrok:
+  #   image: ngrok/ngrok:latest
+  #   container_name: ngrok
+  #   restart: unless-stopped
+  #   # tty: true
+  #   command:
+  #     - "start"
+  #     - "--all"
+  #     - "--config"
+  #     - "/etc/ngrok.yml"
+  #   ports:
+  #     - "4040:4040"
+  #   volumes:
+  #     - ./ngrok.yml:/etc/ngrok.yml

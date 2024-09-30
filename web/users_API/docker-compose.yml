@@ -1,0 +1,56 @@
+version: "3.7"
+
+services:
+  fAInancialdb:
+    container_name: fAInancial_db
+    image: postgres:11
+    environment:
+      - POSTGRES_USER=fAInancial
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=fAinancial_users_db
+    volumes:
+    - fAInancialdb-data:/var/lib/postgresql/data
+    ports:
+      - 54323:5432
+    expose:
+      - 5432
+    networks:
+      - web-fainancial
+
+  node_fainancial_auth_api:
+    container_name: node_fainancial_api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - AUTH_SECRET=askldmasldkmaslkd
+      - AUTH_ACTIVATE=jnsadkjxansd232423dsk
+      - REFRESH_SECRET=aknsdlaskndalsn32r2
+      - AUTH_EXPIRES=1h
+      - AUTH_ROUNDS=10
+      - USER_NAME_GMAIL=fainancial.chatbot@gmail.com
+      - GMAIL_APP_PASS=ohqcnnzhpzqhwvhv
+      - DOMAIN=localhost:3001
+      - DATABASE_HOST=fAInancialdb
+      - DB_PORT=5432
+    volumes:
+      - './:/app'
+      - '/app/node_modules'
+    expose:
+      - 3000      
+    depends_on:
+      - fAInancialdb
+    ports:
+      - '3000:3000'
+    command: sh -c 'npm run sq-db && npm run sq-ms && npm start'
+    networks:
+      - web-fainancial
+
+networks:
+  web-fainancial:
+    name: web-fainancial
+    driver: bridge
+
+volumes:
+  fAInancialdb-data:
+    driver: local

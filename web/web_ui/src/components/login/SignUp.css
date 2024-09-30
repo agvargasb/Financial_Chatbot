@@ -1,0 +1,80 @@
+.signUp{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    color:#fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.signUp h1{
+    font-size: 4.5rem;
+    margin-bottom: 20px;
+    color: #000;
+    font-weight: bold;
+    padding: 15px 0;
+}
+
+.signUp form{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.signUp form input:not([type = "submit"]){
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #000;
+    outline: none !important;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 0.99rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.signUp form button{
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #000;
+    outline: none !important;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 0.99rem;
+    font-weight: bold;
+    color: #000;
+    background: #fff;
+    transition: 0.3s linear;
+}
+
+.signUp form button:hover{
+    background-color: #000;
+    color: #fff;
+}
+
+.signUp form span .hide {
+    display: none !important;
+    color: #000;
+}
+
+
+@media screen and (max-width: 529px) {
+
+
+    .signUp h1{
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #000;
+        font-weight: bold;
+        padding: 15px 0;
+    }
+}
+
+
