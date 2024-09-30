@@ -3,13 +3,13 @@
 Welcome to the fAInancial project! This repository is organized into two main directories:
 chatbot - web
 
-> This guide is under construction!
+This guide is under construction!
 
-> You need a Google Gemini key and a Qdrant cluster (you can use the free tier).
+> You need a Google Gemini key and a Qdrant cluster (you can use the free tiers).
 
-> The downloading of the SEC filings and posterior uploading to a Qdrant cluster is done with Google Colab.
+> Downloading the SEC filings and uploading them to a Qdrant cluster is done using Google Colab.
 
-> For more details go to the readme files in the subdirectories.
+> See the readme files in the subdirectories for more details.
 
 ## chatbot
 
